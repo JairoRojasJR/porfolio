@@ -11,7 +11,7 @@ const mail = "jairorojas@jayoweb.dev";
 
 <section id="contact" class="card__container">
   <div
-    class="card__section flex flex-col items-center border-t-4 border-b-4 border-violet backdrop-blur-sm text-white"
+    class="card__section flex flex-col items-center border-t-4 border-b-4 border-violet text-white"
   >
     <field class="flex gap-1 md:gap-2">
       <label class="bg-dark rounded-md py-1 px-2 text-xl md:text-2xl">@</label>
@@ -41,13 +41,15 @@ const mail = "jairorojas@jayoweb.dev";
       />
     </ul>
   </div>
-  <style>
-    div {
-      @apply bg-transparent;
-      @apply py-6 px-2 md:p-6;
-    }
-  </style>
 </section>
+
+<style>
+  div {
+    @apply bg-transparent backdrop-blur-sm;
+    @apply py-6 px-2 md:p-6;
+  }
+</style>
+
 <script>
   const $copyToClipboard = document.getElementById("copyToClipboard");
   const $mail = document.getElementById("mail") as HTMLInputElement;

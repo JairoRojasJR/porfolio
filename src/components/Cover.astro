@@ -8,7 +8,7 @@ import Php from "../icons/Php.astro";
 import React from "../icons/React.astro";
 ---
 
-<section class="h-screen p-6">
+<section class="h-dvh p-6">
   <div
     class="card h-full flex flex-col justify-evenly lg:grid lg:grid-cols-[40%,1fr] lg:grid-rows-[90%,1fr]"
   >
@@ -59,6 +59,9 @@ import React from "../icons/React.astro";
 </section>
 
 <style>
+  section {
+    transition: height 0.1s;
+  }
   :root {
     --size-icon: 36px;
     --half-size-icon: calc(var(--size-icon) / 2);

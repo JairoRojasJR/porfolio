@@ -10,11 +10,11 @@ export default {
 				superdark: '#1b1b3b'
 			},
 			boxShadow: {
-				violet: '0 0 0.5rem violet',
+				violet: '0 0 0.5rem rgb(138, 66, 255)',
 				turquoise: '0 0 0.5rem turquoise'
 			},
 			dropShadow: {
-				violet: '0 0 0.5rem violet'
+				violet: '0 0 0.5rem rgb(138, 66, 255)'
 			}
 		},
 	},

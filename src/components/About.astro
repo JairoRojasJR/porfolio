@@ -1,59 +1,87 @@
-<section id="about" class="card__container">
+---
+import Css from "../icons/Css.astro";
+import Express from "../icons/Express.astro";
+import Git from "../icons/Git.astro";
+import Github from "../icons/Github.astro";
+import Html from "../icons/Html.astro";
+import Javascript from "../icons/Javascript.astro";
+import Mongodb from "../icons/Mongodb.astro";
+import Mysql from "../icons/Mysql.astro";
+import Nextjs from "../icons/Nextjs.astro";
+import Nodejs from "../icons/Nodejs.astro";
+import Php from "../icons/Php.astro";
+import React from "../icons/React.astro";
+import Typescript from "../icons/Typescript.astro";
+import Technology from "./Technology.astro";
+---
+
+<section id="introduction" class="card__container">
   <div class="card__section">
     <h3 class="card__title">¿Te cuento un poco de mi?</h3>
-    <article class="ml-4">
-      <h4 class="card__subtitle mb-4">Datos personales</h4>
+    <header class="ml-1 flex flex-col gap-2">
+      <h4 class="card__subtitle">Me presento</h4>
       <div
-        class="flex flex-col md:flex-row gap-6 list-none px-4 mx-4 border-l-4 border-l-violet"
+        class="flex flex-col md:flex-row gap-4 px-3 mx-3 md:px-4 md:mx-4 border-l-4 border-l-violet basis-1/2"
       >
-        <span
+        <article
           class="flex flex-col grow md:order-[2] items-center justify-center"
         >
-          <div class="w-[100px] h-[100px]">
+          <span class="w-[100px] h-[100px]">
             <img
               class="drop-shadow-violet"
               alt="Jairo Rojas"
               src="favicon.ico"
             />
-          </div>
-        </span>
-        <ul>
-          <li><b>Nombre:</b> Jairo Rojas</li>
-          <li>
-            <b>Edad:</b> 21 años
-          </li>
-          <li>
-            <b>Estudios:</b> Bachillerato técnico en informática
-          </li>
-          <li>
-            <b>Celular/Movil:</b> +593 98 268 88 24
-          </li>
-          <li>
-            <b>Nacionalidad:</b> Ecuatoriana/Española
-          </li>
-          <li>
-            <b>Residencia:</b> Ecuador, El Oro, Machala
-          </li>
-        </ul>
+          </span>
+        </article>
+        <article class="flex flex-col gap-4 basis-1/2">
+          <p>
+            Soy Jairo Rojas, graduado de
+            <strong>bachillerato técnico en informática</strong>. Actualmente
+            autodidacta.
+          </p>
+          <p>
+            No cuento con experiencia laboral, pero si con proyectos donde uso
+            <strong>tecnologías muy demandas e importantes</strong> en el mundo de
+            la web y dónde demuestro mi conocimiento técnico en el area, como puedes
+            ver en <a href="#proyects"
+              ><strong class="text-turquoise">Proyectos.</strong></a
+            >
+          </p>
+          <p>
+            Poniendo siempre mi mayor esfuerzo en cada proyecto por que quede
+            los más <strong>escalable, bonito, y optimizado</strong> posible.
+          </p>
+        </article>
       </div>
-    </article>
-    <article class="ml-4">
-      <h4 class="card__subtitle mb-4">Descripción</h4>
+    </header>
+    <aside class="ml-1 flex flex-col gap-2">
+      <h4 class="card__subtitle">Manejo las tecnologías...</h4>
       <div
-        class="flex flex-col gap-6 list-none px-4 mx-4 border-l-4 border-l-violet"
+        class="flex flex-wrap gap-2 px-3 mx-3 md:px-4 md:mx-4 border-l-4 border-l-violet"
       >
-        <p class="max-w-[80char]">
-          Joven autodidacta graduado de bachillerato técnico en informática, sin
-          experiencia en el mundo laboral, pero con cierta experienca con las
-          tecnologías más demandas e importantes en el mundo de la web.
-        </p>
-        <span>
-          Puedes juzgarlo tú mismo:
-          <a href="#proyects">
-            (ver: <strong>Proyectos</strong>)
-          </a>
-        </span>
+        <Technology Icon={Html} name="Html" />
+        <Technology Icon={Css} name="Css" />
+        <Technology Icon={Javascript} name="Javascript" />
+        <Technology Icon={React} name="React" />
+        <Technology Icon={Nextjs} name="Nextjs" />
+        <Technology Icon={Nodejs} name="Nodejs" />
+        <Technology Icon={Express} name="Expess" />
+        <Technology Icon={Typescript} name="Typescript" />
+        <Technology Icon={Mysql} name="Sql" />
+        <Technology Icon={Git} name="Git" />
+        <Technology Icon={Github} name="Github" />
+        <Technology Icon={Php} name="Php" />
+        <Technology Icon={Mongodb} name="NoSql" />
       </div>
-    </article>
+    </aside>
+    <a
+      id="downloadcv"
+      class="cursor-pointer bg-turquoise self-center py-2 px-6 rounded-md text-dark"
+      href="CV.pdf"
+      download=""
+    >
+      Descargar CV
+    </a>
   </div>
 </section>
