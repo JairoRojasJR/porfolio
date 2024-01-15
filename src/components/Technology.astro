@@ -1,0 +1,15 @@
+---
+import type { SVGProps } from "../types";
+
+interface Props {
+  Icon: (props: SVGProps) => any;
+  name: string;
+}
+
+const { Icon, name } = Astro.props;
+---
+
+<article class="flex items-center gap-4">
+  <Icon font-size="50px" />
+  <span>{name}</span>
+</article>

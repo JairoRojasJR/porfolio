@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Cover from "../components/Cover.astro";
+import Nav from "../components/Nav.astro";
+import Intro from "../components/Intro.astro";
+import Proyects from "../components/Proyects.astro";
+import About from "../components/About.astro";
+import Contact from "../components/Contact.astro";
+---
+
+<Layout title="Desarrollador web full stack Machala Jairo Rojas">
+	<Cover />
+	<div class="flex flex-col p-4">
+		<Nav />
+		<Intro />
+		<Proyects />
+		<About />
+		<Contact />
+	</div>
+</Layout>
+
+<style>
+	html {
+		color-scheme: dark light;
+	}
+</style>

@@ -1,0 +1,49 @@
+---
+interface Props {
+  name: string;
+  image: string;
+  href: string;
+}
+
+const { name, image, href } = Astro.props;
+---
+
+<article class="flex items-center flex-wrap gap-8">
+  <h4 class="card__subtitle w-full">{name}</h4>
+  <div class="flex flex-col md:flex-row gap-8">
+    <aside class="flex items-center md:max-w-[50%] grow">
+      <slot />
+    </aside>
+    <div class="flex justify-center grow">
+      <div
+        class="rounded-md object-cover shadow-violet hover:shadow-turquoise transition-shadow duration-300 object-top overflow-hidden relative"
+      >
+        <img alt={name} src={image} />
+        <a
+          class="absolute w-full h-full cursor-pointer top-0 left-0"
+          href={href}
+          target="_BLANK"
+          rel="noreferrer"></a>
+      </div>
+    </div>
+  </div>
+</article>
+<style>
+  article:nth-child(odd) h4 {
+    direction: ltr;
+  }
+
+  article:nth-child(even) aside {
+    order: 0;
+  }
+
+  @media screen and (min-width: 700px) {
+    article:nth-child(odd) h4 {
+      direction: rtl;
+    }
+
+    article:nth-child(even) aside {
+      order: 2;
+    }
+  }
+</style>

@@ -1,0 +1,121 @@
+---
+import Javascript from "../icons/Javascript.astro";
+import Typescript from "../icons/Typescript.astro";
+import Mysql from "../icons/Mysql.astro";
+import Mongodb from "../icons/Mongodb.astro";
+import Nodejs from "../icons/Nodejs.astro";
+import Php from "../icons/Php.astro";
+import React from "../icons/React.astro";
+---
+
+<section class="h-screen p-6">
+  <div
+    class="card h-full flex flex-col justify-evenly lg:grid lg:grid-cols-[40%,1fr] lg:grid-rows-[90%,1fr]"
+  >
+    <article class="flex flex-col items-center justify-center">
+      <div class="flex items-end justify-center relative">
+        <div>
+          <div class="heptagon h-[175px] w-[175px] lg:h-[250px] lg:w-[250px]">
+            <img class="object-cover" alt="jairo rojas" src="/my_self.webp" />
+          </div>
+          <Javascript class="icon hep-p1" />
+          <Typescript class="icon hep-p2" />
+          <Mysql class="icon hep-p3" />
+          <Mongodb class="icon hep-p4" />
+          <Php class="icon hep-p5" />
+          <Nodejs class="icon hep-p6" />
+          <React class="icon hep-p7" />
+        </div>
+      </div>
+    </article>
+    <article class="flex items-center justify-center">
+      <spanlg
+        class="flex items-center h-[200px] text-[150px] md:h-[250px] md:text-[200px] lg:h-[300px] lg:text-[250px] lg:italic text-turquoise text-"
+        >&#123;</spanlg
+      >
+      <div
+        class="h-[200px] lg:[300px] md:h-[250px] gap-6 lg:gap-10 flex flex-col items-center justify-center"
+      >
+        <h2 class="md:text-xl lg:text-2xl text-center font-semibold text-xl">
+          Jairo Rojas
+        </h2>
+        <h1 class="md:text-xl lg:text-2xl text-center font-semibold text-xl">
+          Desarrollador web full stack
+        </h1>
+      </div>
+      <span
+        class="flex items-center h-[200px] text-[150px] md:h-[250px] md:text-[200px] lg:h-[300px] lg:text-[250px] lg:italic text-turquoise text-"
+        >&#125;</span
+      >
+    </article>
+    <article
+      class="flex flex-col col-[2/3] gap-3 items-center justify-center md:flex-row"
+    >
+      <span>21 años</span>
+      <span>Machala - Ecuador</span>
+      <span>+593 98 268 8824</span>
+    </article>
+  </div>
+</section>
+
+<style>
+  :root {
+    --size-icon: 36px;
+    --half-size-icon: calc(var(--size-icon) / 2);
+    --half-size-icon-negative: calc((var(--size-icon) / 2) * -1);
+  }
+  .heptagon {
+    background: #fff;
+    clip-path: polygon(
+      50% 0%,
+      90% 20%,
+      100% 60%,
+      75% 100%,
+      25% 100%,
+      0% 60%,
+      10% 20%
+    );
+  }
+  .icon {
+    @apply absolute;
+    @apply bg-superdark;
+    @apply rounded-md;
+    @apply p-[0.1rem];
+    @apply shadow-violet;
+    font-size: var(--size-icon);
+  }
+  .hep-p1 {
+    top: var(--half-size-icon-negative);
+    left: calc(50% - var(--half-size-icon));
+  }
+  .hep-p2 {
+    right: calc(10% - var(--half-size-icon));
+  }
+  .hep-p3 {
+    right: var(--half-size-icon-negative);
+  }
+  .hep-p4 {
+    right: calc(25% - var(--half-size-icon));
+  }
+  .hep-p5 {
+    right: calc(75% - var(--half-size-icon));
+  }
+  .hep-p6 {
+    right: calc(100% - var(--half-size-icon));
+  }
+  .hep-p7 {
+    right: calc(90% - var(--half-size-icon));
+  }
+  .hep-p2,
+  .hep-p7 {
+    top: calc(20% - var(--half-size-icon));
+  }
+  .hep-p3,
+  .hep-p6 {
+    top: calc(60% - var(--half-size-icon));
+  }
+  .hep-p4,
+  .hep-p5 {
+    top: calc(100% - var(--half-size-icon));
+  }
+</style>

@@ -1,0 +1,58 @@
+---
+import ContactLink from "./Contact-link.astro";
+import Send from "../icons/Send.astro";
+import Copy from "../icons/Copy.astro";
+import Linkdin from "../icons/Linkedin.astro";
+import Github from "../icons/Github.astro";
+import Whatsapp from "../icons/Whatsapp.astro";
+
+const mail = "jairorojas@jayoweb.dev";
+---
+
+<section id="contact" class="card__container">
+  <div
+    class="card__section flex flex-col items-center border-t-4 border-b-4 border-violet backdrop-blur-sm text-white"
+  >
+    <field class="flex gap-1 md:gap-2">
+      <label class="bg-dark rounded-md py-1 px-2 text-xl md:text-2xl">@</label>
+      <input id="mail" class="w-[175px] p-2" value={mail} disabled />
+      <a
+        class="bg-dark rounded-md py-1 px-2 text-xl md:text-2xl text-turquoise grid place-content-center cursor-pointer"
+        href=`mailto:${mail}?subject=Consulta&body=Hola%20Jairo,%20he%20visto%20tu%20portafolio%20web%20y%20queria%20consultarte...`
+      >
+        <Send />
+      </a>
+      <button
+        id="copyToClipboard"
+        class="bg-dark rounded-md py-1 px-2 text-xl md:text-2xl text-turquoise grid place-content-center cursor-pointer"
+      >
+        <Copy />
+      </button>
+    </field>
+    <ul class="flex justify-center flex-wrap list-none gap-6">
+      <ContactLink
+        Icon={Linkdin}
+        link="https://www.linkedin.com/in/jairo-rojas/"
+      />
+      <ContactLink Icon={Github} link="https://github.com/JairoRojasJR" />
+      <ContactLink
+        Icon={Whatsapp}
+        link="https://api.whatsapp.com/send?phone=593982688824&text=Hola%20Jairo%2C%20he%20visto%20tu%20portafolio%20web%20y%20quer%C3%ADa%20contactarte."
+      />
+    </ul>
+  </div>
+  <style>
+    div {
+      @apply bg-transparent;
+      @apply py-6 px-2 md:p-6;
+    }
+  </style>
+</section>
+<script>
+  const $copyToClipboard = document.getElementById("copyToClipboard");
+  const $mail = document.getElementById("mail") as HTMLInputElement;
+
+  $copyToClipboard?.addEventListener("click", async () => {
+    await navigator.clipboard.writeText($mail?.value ?? "");
+  });
+</script>
