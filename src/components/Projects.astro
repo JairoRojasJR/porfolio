@@ -1,0 +1,32 @@
+---
+import Project from "./Project.astro";
+---
+
+<section id="projects" class="card__container">
+  <div class="card__section">
+    <h3 class="card__title">¿Quieres ver lo que he creado?</h3>
+    <div class="flex flex-col gap-8">
+      <Project
+        name="Menú de restaurante online Restaurante-sf"
+        image="/restaurante-sf.png"
+        href="https://restaurante-sf.jayoweb.dev"
+      >
+        <p>
+          Aplicación web que permite a un restaurante administrar y mostrar su
+          menú.
+        </p>
+      </Project>
+      <Project
+        name="Tienda online JayoShop"
+        image="/jayoshop.png"
+        href="https://shop.jayoweb.dev"
+      >
+        <p>
+          Pensada en la muestra y venta de productos. Permite administrar de
+          manera sencilla el inventario a los administradores. Los clientes
+          pueden ver desde la comodidad de su hogar el inventario.
+        </p>
+      </Project>
+    </div>
+  </div>
+</section>

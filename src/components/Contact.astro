@@ -2,7 +2,7 @@
 import ContactLink from "./Contact-link.astro";
 import Send from "../icons/Send.astro";
 import Copy from "../icons/Copy.astro";
-import Linkdin from "../icons/Linkedin.astro";
+import Linkedin from "../icons/Linkedin.astro";
 import Github from "../icons/Github.astro";
 import Whatsapp from "../icons/Whatsapp.astro";
 
@@ -13,25 +13,29 @@ const mail = "jairorojas@jayoweb.dev";
   <div
     class="card__section flex flex-col items-center border-t-4 border-b-4 border-violet text-white"
   >
-    <field class="flex gap-1 md:gap-2">
-      <label class="bg-dark rounded-md py-1 px-2 text-xl md:text-2xl">@</label>
-      <input id="mail" class="w-[175px] p-2" value={mail} disabled />
+    <article class="flex gap-1 md:gap-2">
+      <span class="bg-dark rounded-md py-1 px-2 text-2xl">@</span>
+      <span
+        id="mail"
+        class="bg-dark rounded-md py-1 px-2 grid place-content-center"
+        >{mail}</span
+      >
       <a
-        class="bg-dark rounded-md py-1 px-2 text-xl md:text-2xl text-turquoise grid place-content-center cursor-pointer"
+        class="bg-dark rounded-md py-1 px-2 text-2xl text-turquoise grid place-content-center cursor-pointer"
         href=`mailto:${mail}?subject=Consulta&body=Hola%20Jairo,%20he%20visto%20tu%20portafolio%20web%20y%20queria%20consultarte...`
       >
         <Send />
       </a>
       <button
         id="copyToClipboard"
-        class="bg-dark rounded-md py-1 px-2 text-xl md:text-2xl text-turquoise grid place-content-center cursor-pointer"
+        class="bg-dark rounded-md py-1 px-2 text-2xl text-turquoise grid place-content-center cursor-pointer"
       >
         <Copy />
       </button>
-    </field>
-    <ul class="flex justify-center flex-wrap list-none gap-6">
+    </article>
+    <article class="flex justify-center flex-wrap list-none gap-6">
       <ContactLink
-        Icon={Linkdin}
+        Icon={Linkedin}
         link="https://www.linkedin.com/in/jairo-rojas/"
       />
       <ContactLink Icon={Github} link="https://github.com/JairoRojasJR" />
@@ -39,7 +43,7 @@ const mail = "jairorojas@jayoweb.dev";
         Icon={Whatsapp}
         link="https://api.whatsapp.com/send?phone=593982688824&text=Hola%20Jairo%2C%20he%20visto%20tu%20portafolio%20web%20y%20quer%C3%ADa%20contactarte."
       />
-    </ul>
+    </article>
   </div>
 </section>
 
@@ -52,9 +56,8 @@ const mail = "jairorojas@jayoweb.dev";
 
 <script>
   const $copyToClipboard = document.getElementById("copyToClipboard");
-  const $mail = document.getElementById("mail") as HTMLInputElement;
-
   $copyToClipboard?.addEventListener("click", async () => {
-    await navigator.clipboard.writeText($mail?.value ?? "");
+    const $mail = document.getElementById("mail") as HTMLSpanElement;
+    await navigator.clipboard.writeText($mail?.textContent ?? "");
   });
 </script>

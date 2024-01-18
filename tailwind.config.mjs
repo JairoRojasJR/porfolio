@@ -5,7 +5,7 @@ export default {
 		extend: {
 			colors: {
 				turquoise: '#7fffd4',
-				dark: '#282828',
+				dark: '#17171e',
 				violet: 'rgb(138, 66, 255)',
 				superdark: '#1b1b3b'
 			},

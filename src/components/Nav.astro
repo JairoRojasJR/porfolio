@@ -1,21 +1,29 @@
 <nav class="flex justify-center sticky top-4 z-20 m-auto w-full max-w-[750px]">
+  <span class="bg-dark absolute top-0 left-0 w-full h-full opacity-40 z-[-1]"
+  ></span>
   <ul
-    class="rounded-sm flex w-full justify-evenly list-none gap-2 md:gap-4 py-4 px-2 md:px-4 shadow-violet max-w-[800px] backdrop-blur-2xl"
+    class="rounded-xl flex w-full justify-evenly list-none gap-2 md:gap-4 py-4 px-2 md:px-4 max-w-[800px] backdrop-blur-2xl"
   >
     <li>
-      <a class="px-2 py-2 md:px-8 rounded-sm bg-dark" href="#introduction"
-        >Sobre mí</a
-      >
-    </li>
-    <li>
-      <a class="px-2 py-2 md:px-8 rounded-sm bg-dark" href="#proyects"
+      <a class="px-2 py-2 md:px-8 rounded-xl bg-dark" href="#projects"
         >Proyectos</a
       >
     </li>
     <li>
-      <a class="px-2 py-2 md:px-8 rounded-sm bg-dark" href="#contact"
+      <a class="px-2 py-2 md:px-8 rounded-xl bg-dark" href="#introduction"
+        >Sobre mí</a
+      >
+    </li>
+    <li>
+      <a class="px-2 py-2 md:px-8 rounded-xl bg-dark" href="#contact"
         >Contacto</a
       >
     </li>
   </ul>
 </nav>
+<style>
+  a:hover {
+    @apply shadow-violet;
+    @apply transition-shadow;
+  }
+</style>

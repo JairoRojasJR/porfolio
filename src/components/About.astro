@@ -1,23 +1,6 @@
----
-import Css from "../icons/Css.astro";
-import Express from "../icons/Express.astro";
-import Git from "../icons/Git.astro";
-import Github from "../icons/Github.astro";
-import Html from "../icons/Html.astro";
-import Javascript from "../icons/Javascript.astro";
-import Mongodb from "../icons/Mongodb.astro";
-import Mysql from "../icons/Mysql.astro";
-import Nextjs from "../icons/Nextjs.astro";
-import Nodejs from "../icons/Nodejs.astro";
-import Php from "../icons/Php.astro";
-import React from "../icons/React.astro";
-import Typescript from "../icons/Typescript.astro";
-import Technology from "./Technology.astro";
----
-
 <section id="introduction" class="card__container">
   <div class="card__section">
-    <h3 class="card__title">¿Te cuento un poco de mi?</h3>
+    <h3 class="card__title">¿Te cuento un poco de mí?</h3>
     <header class="ml-1 flex flex-col gap-2">
       <h4 class="card__subtitle">Me presento</h4>
       <div
@@ -26,7 +9,7 @@ import Technology from "./Technology.astro";
         <article
           class="flex flex-col grow md:order-[2] items-center justify-center"
         >
-          <span class="w-[100px] h-[100px]">
+          <span class="w-[200px] h-[200px]">
             <img
               class="drop-shadow-violet"
               alt="Jairo Rojas"
@@ -36,7 +19,7 @@ import Technology from "./Technology.astro";
         </article>
         <article class="flex flex-col gap-4 basis-1/2">
           <p>
-            Soy Jairo Rojas, graduado de
+            Soy Jairo Rojas, mis amigos me dicen Jayo, graduado de
             <strong>bachillerato técnico en informática</strong>. Actualmente
             autodidacta.
           </p>
@@ -44,39 +27,18 @@ import Technology from "./Technology.astro";
             No cuento con experiencia laboral, pero si con proyectos donde uso
             <strong>tecnologías muy demandas e importantes</strong> en el mundo de
             la web y dónde demuestro mi conocimiento técnico en el area, como puedes
-            ver en <a href="#proyects"
+            ver en <a href="#projects"
               ><strong class="text-turquoise">Proyectos.</strong></a
             >
           </p>
           <p>
             Poniendo siempre mi mayor esfuerzo en cada proyecto por que quede
-            los más <strong>escalable, bonito, y optimizado</strong> posible.
+            los más <strong>escalable, atractivo y optimizado</strong> posible.
           </p>
         </article>
       </div>
     </header>
-    <aside class="ml-1 flex flex-col gap-2">
-      <h4 class="card__subtitle">Manejo las tecnologías...</h4>
-      <div
-        class="flex flex-wrap gap-2 px-3 mx-3 md:px-4 md:mx-4 border-l-4 border-l-violet"
-      >
-        <Technology Icon={Html} name="Html" />
-        <Technology Icon={Css} name="Css" />
-        <Technology Icon={Javascript} name="Javascript" />
-        <Technology Icon={React} name="React" />
-        <Technology Icon={Nextjs} name="Nextjs" />
-        <Technology Icon={Nodejs} name="Nodejs" />
-        <Technology Icon={Express} name="Expess" />
-        <Technology Icon={Typescript} name="Typescript" />
-        <Technology Icon={Mysql} name="Sql" />
-        <Technology Icon={Git} name="Git" />
-        <Technology Icon={Github} name="Github" />
-        <Technology Icon={Php} name="Php" />
-        <Technology Icon={Mongodb} name="NoSql" />
-      </div>
-    </aside>
     <a
-      id="downloadcv"
       class="cursor-pointer bg-turquoise self-center py-2 px-6 rounded-md text-dark"
       href="CV.pdf"
       download=""
