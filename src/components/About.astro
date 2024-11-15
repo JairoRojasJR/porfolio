@@ -1,49 +1,93 @@
-<section id="introduction" class="card__container">
-  <div class="card__section">
-    <h3 class="card__title">¿Te cuento un poco de mí?</h3>
-    <header class="ml-1 flex flex-col gap-2">
-      <h4 class="card__subtitle">Me presento</h4>
-      <div
-        class="flex flex-col md:flex-row gap-4 px-3 mx-3 md:px-4 md:mx-4 border-l-4 border-l-violet basis-1/2"
-      >
-        <article
-          class="flex flex-col grow md:order-[2] items-center justify-center"
-        >
-          <span class="w-[200px] h-[200px]">
-            <img
-              class="drop-shadow-violet"
-              alt="Jairo Rojas"
-              src="favicon.ico"
-            />
-          </span>
-        </article>
-        <article class="flex flex-col gap-4 basis-1/2">
-          <p>
-            Soy Jairo Rojas, mis amigos me dicen Jayo, graduado de
-            <strong>bachillerato técnico en informática</strong>. Actualmente
-            autodidacta.
-          </p>
-          <p>
-            No cuento con experiencia laboral, pero si con proyectos donde uso
-            <strong>tecnologías muy demandas e importantes</strong> en el mundo de
-            la web y dónde demuestro mi conocimiento técnico en el area, como puedes
-            ver en <a href="#projects"
-              ><strong class="text-turquoise">Proyectos.</strong></a
-            >
-          </p>
-          <p>
-            Poniendo siempre mi mayor esfuerzo en cada proyecto por que quede
-            los más <strong>escalable, atractivo y optimizado</strong> posible.
-          </p>
-        </article>
-      </div>
-    </header>
-    <a
-      class="cursor-pointer bg-turquoise self-center py-2 px-6 rounded-md text-dark"
-      href="CV.pdf"
-      download=""
-    >
-      Descargar CV
-    </a>
+<section id="about" class="page__section">
+  <h3 class="title">¿Te cuento un poco de mí?</h3>
+  <h4 class="subtitle">Me presento</h4>
+  <div>
+    <article class="about__profile__container">
+      <img
+        class="about__profile"
+        alt="Jairo Rojas"
+        srcset="./jairo-rojas-2-sm.webp 400w,
+          ./jairo-rojas-2-md.webp 700w,
+          ./jairo-rojas-2.webp 1024w"
+        sizes="(max-width: 700px) 400px,
+          (max-width: 1024px) 700px,
+          (min-width: 1024px) 1024px"
+      />
+    </article>
+    <article class="about__description">
+      <p>
+        Jairo Rojas, 22 años, graduado de <strong>bachillerato técnico en informática</strong>,
+        como el alumno más destacado de la clase en el area.
+      </p>
+      <p>
+        Sin experiencia laboral aún, pero con proyectos con <strong>tecnologías muy demandas e importantes</strong> en el mundo de la web y dónde se demuestra el conocimiento técnico en el area: Ir a
+        <a href="#projects"><strong class="text-turquoise">Proyectos</strong></a>.
+      </p>
+      <p>
+        Motivado por crear un buen producto, cada proyecto queda los más <strong>escalable, atractivo y optimizado</strong> posible.
+      </p>
+    </article>
+    <a class="about__cv__download" href="CV.pdf" download> Descargar CV </a>
   </div>
 </section>
+<style>
+  div,
+  .about__description {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+  }
+
+  .about__profile__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about__profile {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 5px 1px #000;
+  }
+
+  .about__cv__download {
+    order: 2;
+    align-self: center;
+    justify-self: center;
+    padding: 0.5em 1.5em;
+    background-color: var(--play-a);
+    color: var(--primary);
+    border-radius: 0.3em;
+    cursor: pointer;
+    transition: scale 0.3s;
+  }
+
+  .about__cv__download:hover {
+    box-shadow: 0 0 5px 1px var(--play-b);
+    scale: 1.1;
+  }
+
+  @media screen and (min-width: 750px) {
+    div {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about__profile__container {
+      order: 1;
+    }
+
+    .about__profile {
+      width: 200px;
+      height: 200px;
+    }
+
+    .about__cv__download {
+      grid-column: span 2;
+    }
+  }
+</style>

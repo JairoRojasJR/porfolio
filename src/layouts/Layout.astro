@@ -1,4 +1,9 @@
 ---
+import Background from "../components/Background.astro";
+import Footer from "../components/Footer.astro";
+import Hero from "../components/Hero.astro";
+import Ovni from "../icons/Ovni.astro";
+
 interface Props {
 	title: string;
 }
@@ -12,7 +17,7 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta
 			name="description"
-			content="Portafolio de Jairo Rojas desarrollador web full stack de Machala, El Oro, Ecuador"
+			content="Jairo Rojas programador y desarrollador web full stack"
 		/>
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="ico" href="/favicon.ico" />
@@ -20,50 +25,42 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<div class="fixed top-0 left-0 h-lvh inset-0 z-[-1]">
-			<img
-				class="object-cover h-full w-full"
-				alt="fondo estrellado"
-				src="./background.webp"
-			/>
-		</div>
-		<main class="relative z-10 flex flex-col gap-2"><slot /></main>
-		<footer class="p-6 relative z-10">
-			<div class="card__section">
-				<article>
-					<h5 class="text-turquoise text-lg">Happy hacking!!</h5>
-					<span>
-						Gracias por visitar este portafolio, espero que te haya gustado.
-					</span>
-				</article>
-				<article>
-					<h5 class="text-turquoise text-lg">Etiquetas</h5>
-					<div class="flex gap-4 flex-wrap">
-						<span><strong>Jairo Rojas</strong></span>
-						<span><strong>Desarrollador Web</strong></span>
-						<span><strong>Programador Web</strong></span>
-						<span><strong>Machala</strong></span>
-					</div>
-				</article>
-			</div>
-		</footer>
+		<span class="nav__progress"><Ovni class="nav__progress__icon" /></span>
+		<Background />
+		<Hero />
+		<main><slot /></main>
+		<Footer />
 	</body>
 </html>
+
 <style is:global>
-	@tailwind base;
-	@tailwind components;
-	@tailwind utilities;
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+	* {
+		box-sizing: border-box;
+		padding: 0;
+		margin: 0;
 	}
+
+	img {
+		max-width: 100%;
+	}
+
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	button {
+		border: none;
+	}
+
+	:root {
+		--primary: #17171e;
+		--primary-blur: #17171e77;
+		--light: #dfdfdf;
+		--play-a: #7fffd4;
+		--play-b: #8a42ff;
+	}
+
 	@font-face {
 		font-family: "Baskerville Normal";
 		font-style: normal;
@@ -72,51 +69,77 @@ const { title } = Astro.props;
 			local("Baskerville Normal"),
 			url("/baskvl.woff") format("woff");
 	}
+
 	html {
-		font-family: "Baskerville Normal", system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-		color: #dfdfdf;
+		font-family: "Baskerville Normal", "Gill Sans", "Gill Sans MT", Calibri,
+			"Trebuchet MS", sans-serif;
+		background: var(--primary);
+		color: var(--light);
 		scroll-behavior: smooth;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-	body {
 		min-width: 350px;
+		color-scheme: dark light;
 	}
+
 	p {
 		max-width: 80ch;
 		text-wrap: pretty;
 	}
-	.card__container {
-		@apply pt-24;
+
+	main {
+		display: flex;
+		flex-direction: column;
+		gap: 2.5em;
+		padding: 20px;
+		margin-bottom: 1.5em;
 	}
-	.card,
-	.card__section {
-		@apply bg-dark;
-		@apply rounded-xl;
+
+	.page__section {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		padding: 1.5rem;
+		margin: auto;
+		max-width: 750px;
+		background-color: var(--primary);
+		border-radius: 0.75rem;
+		scroll-margin-top: 100px;
 	}
-	.card__section {
-		@apply flex flex-col;
-		@apply gap-6;
-		@apply p-6 m-auto;
-		@apply max-w-[750px];
+
+	.title {
+		font-size: 2em;
+		color: var(--play-a);
+		font-weight: bold;
 	}
-	.card__title {
-		@apply text-3xl;
-		@apply text-turquoise font-bold;
+
+	.subtitle {
+		font-size: 1.5em;
+		color: var(--play-b);
+		font-weight: bold;
 	}
-	.card__subtitle {
-		@apply text-2xl;
-		@apply text-violet font-bold;
+
+	.nav__progress {
+    position: fixed;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+    font-size: 3em;
+  }
+	
+	.nav__progress__icon {
+		position: relative;
+		left: 0;
+    view-timeline-axis: y;
+		
+    animation-timeline: scroll();
+    animation-name: fly;
 	}
+
+	@keyframes fly {
+    from {
+      left: 0;
+    }
+    to {
+      left: calc(100% - 1em);
+    }
+  }
 </style>

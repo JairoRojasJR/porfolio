@@ -1,0 +1,28 @@
+<div>
+  <img
+    alt="fondo estrellado"
+    srcset="./background-sm.webp 400w,
+         ./background-md.webp 700w,
+         ./background-lg.webp 1000w"
+    sizes="(max-width: 700px) 400px,
+        (max-width: 1000px) 700px,
+        (min-width: 1000px) 1000px"
+  />
+</div>
+<style>
+  div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100dvh;
+    inset: 0;
+    z-index: -1;
+  }
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+</style>

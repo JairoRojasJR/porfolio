@@ -1,4 +1,6 @@
 ---
+import ExternalLink from "../icons/ExternalLink.astro";
+
 interface Props {
   name: string;
   image: string;
@@ -8,42 +10,99 @@ interface Props {
 const { name, image, href } = Astro.props;
 ---
 
-<article class="flex items-center flex-wrap gap-8">
-  <h4 class="card__subtitle w-full">{name}</h4>
-  <div class="flex flex-col md:flex-row gap-8">
-    <aside class="flex items-center md:max-w-[50%] grow">
-      <slot />
+<article>
+  <h3 class="subtitle">{name}</h3>
+  <div>
+    <p><slot /></p>
+    <aside>
+      <img alt={name} src={image} />
+      <a href={href} target="_BLANK" rel="noreferrer">
+        <span>
+          Visitar
+          <ExternalLink />
+        </span>
+      </a>
     </aside>
-    <div class="flex justify-center grow">
-      <div
-        class="rounded-md object-cover shadow-violet hover:shadow-turquoise transition-shadow duration-300 object-top overflow-hidden relative"
-      >
-        <img alt={name} src={image} />
-        <a
-          class="absolute w-full h-full cursor-pointer top-0 left-0"
-          href={href}
-          target="_BLANK"
-          rel="noreferrer"></a>
-      </div>
-    </div>
   </div>
 </article>
 <style>
-  article:nth-child(odd) h4 {
-    direction: ltr;
+  article {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 
-  article:nth-child(even) aside {
-    order: 0;
+  article:nth-child(odd) h3 {
+    margin-left: auto;
+  }
+
+  article:nth-child(even) h3 {
+    margin-right: auto;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  p {
+    display: flex;
+    align-items: center;
+  }
+
+  aside {
+    position: relative;
+    border-radius: 0.5em;
+    box-shadow: 0 0 5px 1px var(--play-b);
+    transition: box-shadow 0.3s;
+    overflow: hidden;
+  }
+
+  aside:hover {
+    box-shadow: 0 0 10px 2px var(--play-a);
+  }
+
+  a {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    align-items: flex-end;
+    justify-content: center;
+    background: linear-gradient(#1b1b1b11, #000000ff);
+    color: var(--play-b);
+    font-size: 1.5em;
+    transition: color 0.3s;
+    cursor: pointer;
+  }
+
+  a:hover {
+    color: var(--play-a);
+  }
+
+  span {
+    display: flex;
+    line-height: 1;
+    padding-bottom: 1em;
+    gap: 0.1em;
   }
 
   @media screen and (min-width: 700px) {
-    article:nth-child(odd) h4 {
-      direction: rtl;
+    article:nth-child(even) p {
+      order: 1;
     }
 
-    article:nth-child(even) aside {
-      order: 2;
+    div {
+      flex-direction: row;
+    }
+
+    p,
+    aside {
+      flex-basis: 100%;
     }
   }
 </style>

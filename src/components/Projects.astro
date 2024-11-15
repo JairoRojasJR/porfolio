@@ -2,31 +2,31 @@
 import Project from "./Project.astro";
 ---
 
-<section id="projects" class="card__container">
-  <div class="card__section">
-    <h3 class="card__title">¿Quieres ver lo que he creado?</h3>
-    <div class="flex flex-col gap-8">
-      <Project
-        name="Menú de restaurante online Restaurant"
-        image="/restaurant.webp"
-        href="https://restaurant.jayoweb.dev"
-      >
-        <p>
-          Aplicación web que permite a un restaurante administrar y mostrar su
-          menú.
-        </p>
-      </Project>
-      <Project
-        name="Tienda online JayoShop"
-        image="/jayoshop.webp"
-        href="https://shop.jayoweb.dev"
-      >
-        <p>
-          Pensada en la muestra y venta de productos. Permite administrar de
-          manera sencilla el inventario a los administradores. Los clientes
-          pueden ver desde la comodidad de su hogar el inventario.
-        </p>
-      </Project>
-    </div>
+<section id="projects" class="page__section">
+  <h2 class="title">¿Quieres ver lo que he creado?</h2>
+  <div>
+    <Project
+      name="Menú de restaurante online Restaurant"
+      image="/restaurant.webp"
+      href="https://restaurant.jayoweb.dev"
+    >
+      Aplicación web que permite a un restaurante administrar y mostrar su menú.
+    </Project>
+    <Project
+      name="Tienda online JayoShop"
+      image="/jayoshop.webp"
+      href="https://shop.jayoweb.dev"
+    >
+      Pensada en la muestra y venta de productos. Permite administrar de manera
+      sencilla el inventario a los administradores. Los clientes pueden ver
+      desde la comodidad de su hogar el inventario.
+    </Project>
   </div>
 </section>
+<style>
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+</style>

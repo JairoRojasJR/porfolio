@@ -9,8 +9,14 @@ interface Props {
 const { Icon, link } = Astro.props;
 ---
 
-<span>
+<span class={"contact__link"}>
   <a href={link} rel="noreferrer" target="_BLANK">
     <Icon font-size="2.5em" />
   </a>
 </span>
+<style>
+  .contact__link:hover {
+    scale: 1.2;
+    transition: scale 0.3s;
+  }
+</style>

@@ -1,0 +1,122 @@
+---
+import Javascript from "../icons/Javascript.astro";
+import Typescript from "../icons/Typescript.astro";
+import Mysql from "../icons/Mysql.astro";
+import Mongodb from "../icons/Mongodb.astro";
+import Nodejs from "../icons/Nodejs.astro";
+import Php from "../icons/Php.astro";
+import React from "../icons/React.astro";
+---
+
+<section class="hero__graphic">
+  <div class="hero__graphic__div">
+    <img
+      class="hero__profile"
+      srcset="./jairo-rojas-sm.webp 300w,
+          ./jairo-rojas-md.webp 400w,
+          ./jairo-rojas.webp 600w"
+      sizes="(max-width: 700px) 300px,
+          (max-width: 1000px) 400px,
+          (min-width: 1000px) 600px"
+    />
+    <Javascript class="icon" />
+    <Typescript class="icon" />
+    <Mysql class="icon" />
+    <Mongodb class="icon" />
+    <Php class="icon" />
+    <Nodejs class="icon" />
+    <React class="icon" />
+  </div>
+</section>
+<style>
+  :root {
+    --size-icon: 36px;
+    --half-size-icon: calc(var(--size-icon) / 2);
+    --half-size-icon-negative: calc((var(--size-icon) / 2) * -1);
+  }
+
+  .hero__graphic {
+    flex-direction: column;
+  }
+
+  section,
+  .hero__graphic,
+  .hero__graphic__div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero__graphic__div {
+    position: relative;
+  }
+
+  .hero__profile {
+    width: 175px;
+    height: 175px;
+
+    clip-path: polygon(
+      50% 0%,
+      90% 20%,
+      100% 60%,
+      75% 100%,
+      25% 100%,
+      0% 60%,
+      10% 20%
+    );
+  }
+
+  .icon {
+    position: absolute;
+    font-size: var(--size-icon);
+    padding: 0.1em;
+    border-radius: 0.3em;
+    background-color: #1b1b1b99;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 3px 1px var(--play-b);
+  }
+
+  .icon:nth-of-type(1) {
+    top: var(--half-size-icon-negative);
+    left: calc(50% - var(--half-size-icon));
+  }
+
+  .icon:nth-of-type(2) {
+    right: calc(10% - var(--half-size-icon));
+  }
+
+  .icon:nth-of-type(3) {
+    right: var(--half-size-icon-negative);
+  }
+  .icon:nth-of-type(4) {
+    right: calc(25% - var(--half-size-icon));
+  }
+  .icon:nth-of-type(5) {
+    right: calc(75% - var(--half-size-icon));
+  }
+  .icon:nth-of-type(6) {
+    right: calc(100% - var(--half-size-icon));
+  }
+  .icon:nth-of-type(7) {
+    right: calc(90% - var(--half-size-icon));
+  }
+  .icon:nth-of-type(2),
+  .icon:nth-of-type(7) {
+    top: calc(20% - var(--half-size-icon));
+  }
+  .icon:nth-of-type(3),
+  .icon:nth-of-type(6) {
+    top: calc(60% - var(--half-size-icon));
+  }
+  .icon:nth-of-type(4),
+  .icon:nth-of-type(5) {
+    top: calc(100% - var(--half-size-icon));
+  }
+
+  @media screen and (min-width: 1024px) {
+    .hero__profile {
+      width: 250px;
+      height: 250px;
+    }
+  }
+</style>

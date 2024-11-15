@@ -1,29 +1,60 @@
-<nav class="flex justify-center sticky top-4 z-20 m-auto w-full max-w-[750px]">
-  <span class="bg-dark absolute top-0 left-0 w-full h-full opacity-40 z-[-1]"
-  ></span>
-  <ul
-    class="rounded-xl flex w-full justify-evenly list-none gap-2 md:gap-4 py-4 px-2 md:px-4 max-w-[800px] backdrop-blur-2xl"
-  >
-    <li>
-      <a class="px-2 py-2 md:px-8 rounded-xl bg-dark" href="#projects"
-        >Proyectos</a
-      >
+<nav class="nav">
+  <ul class="nav__ul">
+    <li class="nav__li">
+      <a class="nav__link" href="#projects">Proyectos</a>
     </li>
-    <li>
-      <a class="px-2 py-2 md:px-8 rounded-xl bg-dark" href="#introduction"
-        >Sobre mí</a
-      >
+    <li class="nav__li">
+      <a class="nav__link" href="#about">Sobre mí</a>
     </li>
-    <li>
-      <a class="px-2 py-2 md:px-8 rounded-xl bg-dark" href="#contact"
-        >Contacto</a
-      >
+    <li class="nav__li">
+      <a class="nav__link" href="#contact">Contacto</a>
     </li>
   </ul>
 </nav>
 <style>
-  a:hover {
-    @apply shadow-violet;
-    @apply transition-shadow;
+  .nav {
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    margin: auto;
+    width: 100%;
+    max-width: 750px;
+  }
+
+  .nav__ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    gap: 0.5em;
+    padding: 1em;
+    backdrop-filter: blur(10px);
+    background-color: var(--primary-blur);
+    width: 100%;
+    border-radius: 0.75em;
+  }
+
+  .nav__li:hover {
+    scale: 1.1;
+    transition: scale 0.3s;
+  }
+
+  .nav__link {
+    padding: 0.5em;
+    border-radius: 0.75em;
+    background-color: var(--primary);
+    box-shadow: 0 0 5px 1px #000;
+    transition: box-shadow 0.3s;
+  }
+
+  .nav__link:hover {
+    box-shadow: 0 0 5px 1px var(--play-b);
+  }
+
+  @media screen and (min-width: 450px) {
+    .nav__link {
+      padding-inline: 1.5em;
+    }
   }
 </style>
