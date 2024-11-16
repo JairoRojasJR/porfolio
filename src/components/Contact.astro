@@ -85,6 +85,46 @@ const mail = "jairorojas@jayoweb.dev";
     color: var(--play-a);
     cursor: pointer;
   }
+
+  #copyToClipboard {
+    position: relative;
+  }
+
+  #copyToClipboard::before {
+    display: none;
+    content: 'Copiado';
+    position: absolute;
+    left: calc(50% - 0.325em);
+    bottom: 100%;
+    padding: 0.5em;
+    background-color: var(--primary);
+    border: 3px solid #000;
+    color: var(--light);
+    backdrop-filter: blur(10px);
+    font-size: 0.65em;
+    border-radius: 0.5em;
+    border-bottom-left-radius: 0;
+    animation: show 2s both;
+  }
+
+  #copyToClipboard:focus::before {
+    display: block;
+  }
+
+  @keyframes show {
+    0% {
+      opacity: 0;
+    }
+
+    25%, 75% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+      display: none;
+    }
+  }
 </style>
 
 <script>
